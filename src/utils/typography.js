@@ -1,5 +1,5 @@
 import Typography from 'typography'
-import Theme from './typography-theme-twin-peaks/src'
+import Theme from './typography-theme-twin-peaks/dist'
 
 Theme.headerFontFamily = ['Montserrat', 'sans serif']
 Theme.bodyFontFamily = ['Lato', 'sans serif']
