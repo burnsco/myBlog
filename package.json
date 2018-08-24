@@ -5,6 +5,7 @@
   "author": "Assim ELHAMMOUTI <hello@assim.me>",
   "dependencies": {
     "@atlaskit/spinner": "^9.0.7",
+    "compass-vertical-rhythm": "^1.4.5",
     "gatsby": "next",
     "gatsby-plugin-feed": "next",
     "gatsby-plugin-google-analytics": "next",
@@ -20,6 +21,7 @@
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
+    "gray-percentage": "^2.0.0",
     "lodash": "^4.17.5",
     "prismjs": "^1.15.0",
     "react": "^16.3.2",
@@ -29,7 +31,8 @@
     "styled-components": "^3.4.5",
     "typeface-merriweather": "0.0.43",
     "typeface-montserrat": "0.0.43",
-    "typography": "^0.16.17"
+    "typography": "^0.16.17",
+    "typography-breakpoint-constants": "^0.15.10"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

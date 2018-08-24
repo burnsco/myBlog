@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/assim/.nvm/versions/node/v9.10.0/bin/node /usr/local/Cellar/yarn/1.9.4/libexec/bin/yarn.js add gatsby-remark-use-jsx
+  /Users/assim/.nvm/versions/node/v9.10.0/bin/node /usr/local/Cellar/yarn/1.9.4/libexec/bin/yarn.js add gray-percentage Types typography-breakpoint-constants compass-vertical-rhythm
 
 PATH: 
   /Users/assim/.nvm/versions/node/v9.10.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/gatsby-remark-use-jsx: Not found
+  Error: https://registry.yarnpkg.com/Types: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:64202:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:137468:22)
       at Request.emit (events.js:180:13)
@@ -28,13 +28,10 @@ Trace:
 
 npm manifest: 
   {
-    "name": "gatsby-starter-blog",
-    "description": "Starter Gatsby Blog",
+    "name": "blog",
+    "description": "Assim's blog",
     "version": "1.0.0",
-    "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-    "bugs": {
-      "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
-    },
+    "author": "Assim ELHAMMOUTI <hello@assim.me>",
     "dependencies": {
       "@atlaskit/spinner": "^9.0.7",
       "gatsby": "next",
@@ -53,7 +50,6 @@ npm manifest:
       "gatsby-transformer-remark": "next",
       "gatsby-transformer-sharp": "next",
       "lodash": "^4.17.5",
-      "prism-react-renderer": "^0.1.2",
       "prismjs": "^1.15.0",
       "react": "^16.3.2",
       "react-dom": "^16.3.2",
@@ -62,9 +58,7 @@ npm manifest:
       "styled-components": "^3.4.5",
       "typeface-merriweather": "0.0.43",
       "typeface-montserrat": "0.0.43",
-      "typography": "^0.16.17",
-      "typography-theme-stern-grove": "^0.15.10",
-      "typography-theme-wordpress-2016": "^0.15.10"
+      "typography": "^0.16.17"
     },
     "devDependencies": {
       "eslint": "^4.19.1",
@@ -72,15 +66,14 @@ npm manifest:
       "gh-pages": "^1.1.0",
       "prettier": "^1.12.0"
     },
-    "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+    "homepage": "https://assim.me",
     "keywords": [
       "gatsby"
     ],
     "license": "MIT",
     "main": "n/a",
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+      "type": "git"
     },
     "scripts": {
       "dev": "gatsby develop",
@@ -8441,10 +8434,6 @@ Lockfile:
       renderkid "^2.0.1"
       utila "~0.4"
   
-  prism-react-renderer@^0.1.2:
-    version "0.1.2"
-    resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-0.1.2.tgz#4130ede656f860943fc6e37a1506de9c3614d437"
-  
   prismjs@^1.15.0:
     version "1.15.0"
     resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.15.0.tgz#8801d332e472091ba8def94976c8877ad60398d9"
@@ -10433,27 +10422,9 @@ Lockfile:
     version "0.0.43"
     resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-0.0.43.tgz#c70d76b85ab613a9f4855c061c354eac561c1aae"
   
-  typography-breakpoint-constants@^0.15.10:
-    version "0.15.10"
-    resolved "https://registry.yarnpkg.com/typography-breakpoint-constants/-/typography-breakpoint-constants-0.15.10.tgz#bd5308dd57250e7f28a8c6e1c0e668ddf1178c5c"
-  
   typography-normalize@^0.14.0:
     version "0.14.0"
     resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.14.0.tgz#1d77c1fe2aaf4a51b3673c4c85c85a65a2d4b573"
-  
-  typography-theme-stern-grove@^0.15.10:
-    version "0.15.10"
-    resolved "https://registry.yarnpkg.com/typography-theme-stern-grove/-/typography-theme-stern-grove-0.15.10.tgz#cf8dcb5bc9641b68283665e976016c092c8aba55"
-    dependencies:
-      gray-percentage "^2.0.0"
-      typography-breakpoint-constants "^0.15.10"
-  
-  typography-theme-wordpress-2016@^0.15.10:
-    version "0.15.10"
-    resolved "https://registry.yarnpkg.com/typography-theme-wordpress-2016/-/typography-theme-wordpress-2016-0.15.10.tgz#8f14f002af9334303b858093358455e02d33131d"
-    dependencies:
-      gray-percentage "^2.0.0"
-      typography-breakpoint-constants "^0.15.10"
   
   typography@^0.16.17:
     version "0.16.17"
