@@ -12,6 +12,7 @@ const Wrapper = styled.form`
   border-radius: 3px;
   background: #fff;
   padding: 10px 20px;
+  height: ${props => props.landing && '100vh'};
 `
 
 const Button = styled.button`
@@ -162,6 +163,7 @@ class Signup extends React.Component {
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={this.handleSubmit}
+        landing={this.props.landing}
       >
         <Title>{title}</Title>
         {!submitted && (
