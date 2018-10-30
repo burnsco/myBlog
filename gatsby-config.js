@@ -8,6 +8,12 @@ module.exports = {
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {
+      resolve: `gatsby-plugin-drip-widget`,
+      options: {
+        account: '8103033', // Get it by going to "Account => Site setup" and look for `_dcs.account`
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
