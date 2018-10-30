@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
 import Helmet from 'react-helmet'
@@ -30,13 +30,16 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         <p style={{ fontStyle: 'italic' }}>
-          NOTE: This is a cross-post from
-          {<Link to={'/landing'}> my newsletter.</Link>} I publish each email
-          one week after it’s sent. Subscribe to get more content like this
-          earlier right in your inbox! 💌
+          NOTE: This is a cross-post from{' '}
+          {
+            <a href={'https://www.getdrip.com/forms/14582623/submissions/new'}>
+              my newsletter.
+            </a>
+          }{' '}
+          I publish each email one week after it’s sent. Subscribe to get more
+          content like this earlier right in your inbox! 💌
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Signup title="Sign up to my newsletter and get my latest blog posts" />
         <hr
           style={{
             marginBottom: rhythm(1),
