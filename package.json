@@ -5,6 +5,7 @@
   "author": "Assim ELHAMMOUTI <hello@assim.me>",
   "dependencies": {
     "@atlaskit/spinner": "^9.0.7",
+    "babel-preset-gatsby": "^0.1.4",
     "compass-vertical-rhythm": "^1.4.5",
     "gatsby": "^2.0.34",
     "gatsby-plugin-drip-widget": "^1.0.2",

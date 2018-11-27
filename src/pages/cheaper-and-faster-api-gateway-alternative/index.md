@@ -3,7 +3,7 @@ title: Cloudflare Workers, A cheaper API-Gateway Alternative
 date: '2018-11-27T11:10:32+00:00'
 ---
 
-Hi ! In this post, I'il show you how I saved $$$ by using Cloudflare Workers instead of AWS's API-Gateway to proxy requests to my AWS Lambda functions.
+Hi ! In this post, I'Il show you how I saved $$$ by using Cloudflare Workers instead of AWS's API-Gateway to proxy requests to my AWS Lambda functions.
 
 ### Why use Cloudflare Workers ?
 
