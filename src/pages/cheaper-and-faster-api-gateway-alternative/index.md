@@ -12,7 +12,7 @@ It's all about the cost. 10 million api requests will cost you :
 - With API-Gateway: $35
 - With Cloudflare Workers: $5
 
-That is a **$30** difference !!
+We can say that Cloudflare Workers saves you **85%** compared to API-Gateway !!
 
 ## Getting Started
 
