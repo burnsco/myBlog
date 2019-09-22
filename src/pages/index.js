@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby'
+import { Link } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
 import Helmet from 'react-helmet'
@@ -13,24 +13,86 @@ const Title = styled.h3`
 `
 
 const BlogIndex = props => {
-  const siteTitle = get(props, 'data.site.siteMetadata.title')
+  const siteTitle = get(
+    props,
+    'data.site.siteMetadata.title'
+  )
   const posts = get(props, 'data.allMarkdownRemark.edges')
 
   return (
     <Layout location={props.location}>
-      <Helmet title={siteTitle} />
+      <Helmet title={siteTitle}>
+        <title>
+          Assim's Blog | React, React Native and GraphQL
+        </title>
+        <meta
+          name="title"
+          content="Assim's Blog | React, React Native and GraphQL"
+        />
+        <meta
+          name="description"
+          content="Hi ! My name is Assim and I'm a software engineer."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.assim.me/"
+        />
+        <meta
+          property="og:title"
+          content="Assim's Blog | React, React Native and GraphQL"
+        />
+        <meta
+          property="og:description"
+          content="Hi ! My name is Assim and I'm a software engineer."
+        />
+        <meta
+          property="og:image"
+          content="/static/react-repo.png"
+        />
+
+        <meta
+          property="twitter:card"
+          content="summary_large_image"
+        />
+        <meta
+          property="twitter:url"
+          content="https://www.assim.me/"
+        />
+        <meta
+          property="twitter:title"
+          content="Assim's Blog | React, React Native and GraphQL"
+        />
+        <meta
+          property="twitter:description"
+          content="Hi ! My name is Assim and I'm a software engineer."
+        />
+        <meta
+          property="twitter:image"
+          content="/static/react-repo.png"
+        />
+      </Helmet>
       <Bio />
       {posts.map(({ node }) => {
-        const title = get(node, 'frontmatter.title') || node.fields.slug
+        const title =
+          get(node, 'frontmatter.title') || node.fields.slug
         return (
           <div key={node.fields.slug}>
             <Title>
-              <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+              <Link
+                style={{ boxShadow: 'none' }}
+                to={node.fields.slug}
+              >
                 {title}
               </Link>
             </Title>
             <small>{node.frontmatter.date}</small>
-            <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            <p
+              dangerouslySetInnerHTML={{
+                __html: node.excerpt,
+              }}
+            />
           </div>
         )
       })}
@@ -47,7 +109,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt
