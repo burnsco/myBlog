@@ -1,5 +1,5 @@
 ---
-title: React, the boring but important parts
+title: React, the boring but important parts (Prior to hooks)
 date: '2018-01-10T15:58:27+00:00'
 ---
 
