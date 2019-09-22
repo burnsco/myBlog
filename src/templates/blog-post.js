@@ -13,13 +13,26 @@ const BlogPostTemplate = props => {
     props,
     'data.site.siteMetadata.title'
   )
+  const siteUrl = get(
+    props,
+    'data.site.siteMetadata.siteUrl'
+  )
   const { previous, next } = props.pageContext
 
   return (
     <Layout location={props.location}>
       <Helmet
         title={`${post.frontmatter.title} | ${siteTitle}`}
-      />
+      >
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+        <meta
+          name="twitter:image"
+          content={`${siteUrl}${post.fields.slug}twitter-card.jpg`}
+        />
+      </Helmet>
       <h1 style={{ textAlign: 'center' }}>
         {post.frontmatter.title}
       </h1>
@@ -95,6 +108,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

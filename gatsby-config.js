@@ -33,6 +33,22 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-social-cards`,
+            options: {
+              title: {
+                color: 'white',
+                size: 32, // 16|24|32|48|64
+              },
+              meta: {
+                color: 'white',
+                parts: [
+                  { field: 'date', format: 'mmmm dS' },
+                ],
+              },
+              background: '#0069ff',
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1024,
