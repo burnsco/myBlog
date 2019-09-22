@@ -43,9 +43,9 @@ createdb graphqldb
 
 This will create a new database for us. To connect to it for testing purposes, you can use [TablePlus](https://tableplus.io/)(Free).
 
-To test if the database exists, create a new connection on TablePlus, give it a name, in my case I named it `GraphqlDB`, and give it a database name, which is `graphqldb` (the name of the database that we created earlier), then click on Test. If All the feilds turn green then the database is created and we're ready to connect to it.
+To test if the database exists, create a new connection on TablePlus, give it a name, in my case I named it `GraphqlDB`, and give it a database name, which is `graphqldb` (the name of the database that we created earlier), then click on Test. If All the fields turn green then the database is created and we're ready to connect to it.
 
-![TablePlus](./postgres-test-tableplus.png)
+![TablePlus](./images/postgres-test-tableplus.png)
 
 ### Setup the project using Typescript
 
@@ -269,12 +269,12 @@ const resolvers = {
 
 Let's add a user now using this mutation. Go to `http://localhost:4000` and add a user:
 
-![Mutation screenshot](./addUser-mutation.png)
+![Mutation screenshot](./images/addUser-mutation.png)
 
 As you can see on the right, we created a user with id `1`.
 
 Let's try to query the user we just added using his `Id`:
 
-![Mutation screenshot](./user-query.png)
+![Mutation screenshot](./images/user-query.png)
 
 Aaand we got the user back 🎉🎉

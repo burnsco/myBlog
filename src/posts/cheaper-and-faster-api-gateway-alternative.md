@@ -3,14 +3,14 @@ title: Cloudflare Workers, A cheaper API-Gateway Alternative
 date: '2018-11-27T11:10:32+00:00'
 ---
 
-Hi ! In this post, I'Il show you how I saved $$$ by using Cloudflare Workers instead of AWS's API-Gateway to proxy requests to my AWS Lambda functions.
+Hi ! In this post, I'Il show you how I saved \$\$\$ by using Cloudflare Workers instead of AWS's API-Gateway to proxy requests to my AWS Lambda functions.
 
 ### Why use Cloudflare Workers ?
 
 It's all about the cost. 10 million api requests will cost you :
 
-- With API-Gateway: $35
-- With Cloudflare Workers: $5
+- With API-Gateway: \$35
+- With Cloudflare Workers: \$5
 
 We can say that Cloudflare Workers saves you **85%** compared to API-Gateway !!
 
@@ -24,7 +24,7 @@ cd worker-proj
 yarn init -y
 ```
 
-then install some dev packages that we'il need mainly for bundling our worker:
+then install some dev packages that we'll need mainly for bundling our worker:
 
 ```bash
 yarn add dotenv-webpack webpack webpack-cli -D
@@ -94,7 +94,7 @@ async function worker(request) {
   const reader = request.body.getReader()
   // getPayloadFromReader is a function that we use to get the body of a request
   const payload = await getPayloadFromReader(reader)
-  // we sign our request using the credentiels we created earlier
+  // we sign our request using the credentials we created earlier
   const req = aws4.sign(
     {
       method: 'POST',
@@ -168,10 +168,10 @@ To test what we've done so far, add the `build` script to your package.json:
 }
 ```
 
-and run `yarn build`, then copy the code that'Il find in `dist/worker.js`.
+and run `yarn build`, then copy the code that'll find in `dist/worker.js`.
 
 Once you copy the worker code, head to https://cloudflareworkers.com and paste the worker code in the red-bordered section then click on `update`.
-![CloudflareWorkers.com](./cloudflare-workder-screenshot.png)
+![CloudflareWorkers.com](./images/cloudflare-workder-screenshot.png)
 
 In the right section _(green-bordered)_ of the screenshot above you can see test different kinds of requests.
 

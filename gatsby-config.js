@@ -7,6 +7,7 @@ module.exports = {
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
+    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-drip-widget`,
       options: {
@@ -18,6 +19,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/posts`,
+        name: 'posts',
       },
     },
     {

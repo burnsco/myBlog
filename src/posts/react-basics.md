@@ -25,7 +25,7 @@ var Paragraph = function Paragraph(props) {
 
 Right now, you might be asking yourself _WTF is this..._. But don't worry though, let's write the same component but this time using JSX:
 
-```js
+```jsx
 const Paragraph = props => (
   <div>
     <p>this is a paragraph</p>
@@ -57,7 +57,7 @@ All this bla bla is weird so EXAMPLE TIME :
 
 Let's say we have a component that has an _input_ and an _h3_, and we want to show whatever in the _h3_ is written in the _input_
 
-```js
+```jsx
 import React, { Component } from 'react'
 
 class ExampleComponent extends Component {
@@ -135,7 +135,7 @@ To declare one of these methods, you simply declare them the same way we declare
 
 **HISTORY TIME** : Before React 16, to render multiple elements, we needed to wrap them with an element, like a _div_
 
-```js
+```jsx
 const ThreeLines = (props) => (
   <div>
     <h1>title 1</h1>
@@ -147,7 +147,7 @@ const ThreeLines = (props) => (
 
 and with React 16, a better way to render multiple elements was to return them inside an array:
 
-```js
+```jsx
 const ThreeLines = props => [
   <h1>title 1</h1>,
   <h1>title 2</h1>,
@@ -159,7 +159,7 @@ But this solution came with it's own issues. You HAD to add a key prop to the el
 
 With React 16.2, things got a bit easier and better thanks to **Fragments** :
 
-```js
+```jsx
 const ThreeLines = (props) => (
   <React.Fragment>
     <h1>title 1</h1>
@@ -171,7 +171,7 @@ const ThreeLines = (props) => (
 
 Once rendered, this component would look like :
 
-```js
+```jsx
     <h1>title 1</h1>
     <h1>title 2</h1>
     <h1>title 3</h1>
