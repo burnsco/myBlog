@@ -3,6 +3,7 @@ import get from 'lodash/get'
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
+import MetaImage from '../../static/react-repo.png'
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
@@ -47,10 +48,7 @@ const BlogIndex = props => {
           property="og:description"
           content="Hi ! My name is Assim and I'm a software engineer."
         />
-        <meta
-          property="og:image"
-          content="/static/react-repo.png"
-        />
+        <meta property="og:image" content={MetaImage} />
 
         <meta
           property="twitter:card"
@@ -70,7 +68,7 @@ const BlogIndex = props => {
         />
         <meta
           property="twitter:image"
-          content="/static/react-repo.png"
+          content={MetaImage}
         />
       </Helmet>
       <Bio />
