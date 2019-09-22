@@ -3,7 +3,7 @@ title: Cloudflare Workers, A cheaper API-Gateway Alternative
 date: '2018-11-27T11:10:32+00:00'
 ---
 
-Hi ! In this post, I'Il show you how I saved \$\$\$ by using Cloudflare Workers instead of AWS's API-Gateway to proxy requests to my AWS Lambda functions.
+Hi ! In this post, i'll show you how I saved \$\$\$ by using Cloudflare Workers instead of AWS's API-Gateway to proxy requests to my AWS Lambda functions.
 
 ### Why use Cloudflare Workers ?
 
@@ -16,9 +16,9 @@ We can say that Cloudflare Workers saves you **85%** compared to API-Gateway !!
 
 ## Getting Started
 
-First, create a new node project, in this blog post I'il be using `yarn`:
+First, create a new node project, in this blog post i'll be using `yarn`:
 
-```bash
+```sh
 mkdir worker-proj
 cd worker-proj
 yarn init -y
@@ -26,13 +26,13 @@ yarn init -y
 
 then install some dev packages that we'll need mainly for bundling our worker:
 
-```bash
+```sh
 yarn add dotenv-webpack webpack webpack-cli -D
 ```
 
 also we need `aws4` to sign our requests to aws:
 
-```bash
+```sh
 yarn add aws4
 ```
 
@@ -42,13 +42,13 @@ We're using webpack in order to bundle our code and use it as a worker.
 
 Create a new file in the project and call it `webpack.config.js`, and paste the following code into it:
 
-```javascript
+```js
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: './worker.js', // This will be our entry file
   mode: 'production', // We're building for production to optimize our worker
-  plugins: [new Dotenv()], // We'il be using a .env file to store our TOKENS
+  plugins: [new Dotenv()], // we'll be using a .env file to store our TOKENS
   optimization: {
     minimize: true,
   },
@@ -75,10 +75,10 @@ once you have all these params, create a `.env` file and **add them to it**.
 
 ## Writing the worker
 
-First, create a file, we'il name it _worker.js_.
+First, create a file, we'll name it _worker.js_.
 Then, import `aws4` and create a `credentials` object to store our AWS keys:
 
-```javascript
+```js
 import aws4 from 'aws4'
 
 const credentials = {
@@ -89,7 +89,7 @@ const credentials = {
 
 Now we write our worker function. It accepts a `request` param and returns the `response` of a request sent to our Lambda function.
 
-```javascript
+```js
 async function worker(request) {
   const reader = request.body.getReader()
   // getPayloadFromReader is a function that we use to get the body of a request
@@ -121,7 +121,7 @@ addEventListener('fetch', event => {
 
 As for `getPayloadFromReader`:
 
-```javascript
+```js
 function binary_to_string(array) {
   // We need this function to convert binary to string
   var result = ``
@@ -177,6 +177,6 @@ In the right section _(green-bordered)_ of the screenshot above you can see test
 
 ## Conclusion
 
-Now you can stop using API Gateway and save some money !!
+Now you can save some 💰💰 by using Cloudflare Workers !!
 
 Have a great week !

@@ -2,9 +2,15 @@ import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
 import Helmet from 'react-helmet'
+import styled from 'styled-components'
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
+
+const Title = styled.h3`
+  margin-bottom: ${rhythm(1 / 4)};
+  line-height: 1.4;
+`
 
 const BlogIndex = props => {
   const siteTitle = get(props, 'data.site.siteMetadata.title')
@@ -18,15 +24,11 @@ const BlogIndex = props => {
         const title = get(node, 'frontmatter.title') || node.fields.slug
         return (
           <div key={node.fields.slug}>
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-            >
+            <Title>
               <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                 {title}
               </Link>
-            </h3>
+            </Title>
             <small>{node.frontmatter.date}</small>
             <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
           </div>
