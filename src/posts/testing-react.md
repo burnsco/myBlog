@@ -1,5 +1,5 @@
 ---
-title: Testing React - Setup, Unit, Integration and E2E using Jest and Cypress
+title: Testing React - Setup, Unit, Integration and E2E using Jest and Cypress (Feat. GraphQL)
 date: '2019-09-22T16:29:53+0000'
 ---
 
