@@ -9,13 +9,20 @@ import { rhythm, scale } from '../utils/typography'
 
 const BlogPostTemplate = props => {
   const post = props.data.markdownRemark
-  const siteTitle = get(props, 'data.site.siteMetadata.title')
+  const siteTitle = get(
+    props,
+    'data.site.siteMetadata.title'
+  )
   const { previous, next } = props.pageContext
 
   return (
     <Layout location={props.location}>
-      <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-      <h1 style={{ textAlign: 'center' }}>{post.frontmatter.title}</h1>
+      <Helmet
+        title={`${post.frontmatter.title} | ${siteTitle}`}
+      />
+      <h1 style={{ textAlign: 'center' }}>
+        {post.frontmatter.title}
+      </h1>
       <p
         style={{
           ...scale(-1 / 5),
@@ -30,14 +37,36 @@ const BlogPostTemplate = props => {
       <p style={{ fontStyle: 'italic' }}>
         NOTE: This is a cross-post from{' '}
         {
-          <a href={'https://www.getdrip.com/forms/14582623/submissions/new'}>
+          <a
+            href={
+              'https://www.getdrip.com/forms/14582623/submissions/new'
+            }
+          >
             my newsletter.
           </a>
         }{' '}
-        I publish each email one week after it’s sent. Subscribe to get more
-        content like this earlier right in your inbox! 💌
+        I publish each email one week after it’s sent.
+        Subscribe to get more content like this earlier
+        right in your inbox! 💌
       </p>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
+      <p style={{ fontStyle: 'italic' }}>
+        NOTE: If you'd like to improve this post, please
+        send a PR to{' '}
+        {
+          <a
+            href={`https://github.com/RxAssim/myBlog/blob/master/src/posts/${post.fields.slug.replace(
+              /\//g,
+              ''
+            )}.md`}
+          >
+            its repo on Github.
+          </a>
+        }{' '}
+        💌
+      </p>
       <hr
         style={{
           marginBottom: rhythm(1),
@@ -70,6 +99,9 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      fields {
+        slug
+      }
       html
       frontmatter {
         title

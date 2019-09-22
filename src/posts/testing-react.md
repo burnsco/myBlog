@@ -5,11 +5,9 @@ date: '2019-09-22T16:29:53+0000'
 
 Hi ! This is a guide/cheatsheet that I comeback to read when I want to write tests for a project.
 
-I thought this my help other fellow developers so here you go 😁
+I thought this might help other fellow developers so here you go 😁
 
 # Setup
-
-First, let's setup jest:
 
 ## Install jest, cypress and helper libraries
 
@@ -23,7 +21,7 @@ In this section we'll configure Jest and Cypress
 
 ### Jest
 
-Now that we have the libs installed. let's create a config file for Jest in the root directory:
+Let's create a config file for Jest in the root directory:
 
 ```js
 module.exports = {
@@ -56,7 +54,7 @@ module.exports = {
 }
 ```
 
-now create a `test` folder in the root directory and create `setup.js` file inside it:
+Now create a `test` folder in the root directory and create `setup.js` file inside it:
 
 ```js
 // cleanup helper
@@ -74,7 +72,7 @@ module.exports = {}
 
 #### Code coverage
 
-in _package.json_ add `--coverage` at the end of your `test` script:
+In _package.json_ add `--coverage` at the end of your `test` script:
 
 ```json
 {
@@ -126,7 +124,8 @@ then add a script to _package.json_ to run cypress:
 yarn cy:open
 ```
 
-Cypress records videos and takes screenshots of the app while running test, let's add them to `.gitignore`
+Cypress records videos and takes screenshots of the app while running tests.
+Let's add the folders that Cypress uses for this to `.gitignore`
 
 ```
   ...
@@ -136,7 +135,7 @@ Cypress records videos and takes screenshots of the app while running test, let'
 
 #### cypress.json
 
-When running `cypress open` for the first time, it creates a bunch of files and folder inside a folder in the root dir called `cypress`. It also creates a file in the root dir called `cypress.json`. That's the configuration file cypress uses.
+When running `cypress open` for the first time, it creates a bunch of files and folders inside a folder in the root dir called `cypress`. It also creates a file in the root dir called `cypress.json`. That's the configuration file cypress uses.
 
 Let's add a baseUrl to use in our E2E test:
 
@@ -151,7 +150,7 @@ Let's add a baseUrl to use in our E2E test:
 
 `@testing-library/cypress` adds some very handy commands to cypress, let's configure it:
 
-Go to `<rootDir>/cypress/support` and open `index.js` and add this line:
+Go to `<rootDir>/cypress/support`, open `index.js` and add this line:
 
 ```js
 import '@testing-library/cypress/add-commands'
@@ -162,9 +161,9 @@ import '@testing-library/cypress/add-commands'
 
 Have a test-utils file that exports a set of tools that are used specifically for the project you are testing.
 
-#### Example:
+- Example:
 
-Export a render method that takes care of adding styled-components ThemeProvider HOC:
+Export a `render` method that takes care of adding styled-components ThemeProvider HOC:
 
 ```jsx
 import React from 'react'
@@ -193,7 +192,7 @@ function render(component, renderOptions) {
 export { render }
 ```
 
-Now in your tests, import `render` from this test-utils file instead of `@testing-library/react`
+Now in your tests, import `render` from this `test-utils` file instead of `@testing-library/react`
 
 # Unit test
 
@@ -255,12 +254,7 @@ test('login as a user', async () => {
       },
     },
   ]
-  const {
-    getByTestId,
-    container,
-    getByText,
-    getByLabelText,
-  } = render(
+  const { getByTestId, getByText, getByLabelText } = render(
     <MockedProvider mocks={mocks} addTypename={false}>
       <App />
     </MockedProvider>
@@ -289,7 +283,7 @@ test('login as a user', async () => {
 
 # End to end test:
 
-Simplest definition 🤷‍♂️ : Imagine you've got a robot that obeys your commands, now ask it to test your app as a normal user.
+Simplest definition : Imagine you've got a robot that obeys your commands, now ask it to test your app as a normal user 🤷‍♂️.
 
 ```js
 describe('authentication and registration', () => {
@@ -343,3 +337,5 @@ describe('authentication and registration', () => {
   })
 })
 ```
+
+I'll try to improve this post and add to it but please feel free to send a PR in case you want to correct/add/edit something ❤️
