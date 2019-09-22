@@ -25,11 +25,47 @@ const BlogPostTemplate = props => {
         title={`${post.frontmatter.title} | ${siteTitle}`}
       >
         <meta
-          name="twitter:card"
+          name="title"
+          content={post.frontmatter.title}
+        />
+        <meta name="description" content={post.excerpt} />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.assim.me/"
+        />
+        <meta
+          property="og:title"
+          content={post.frontmatter.title}
+        />
+        <meta
+          property="og:description"
+          content={post.excerpt}
+        />
+        <meta
+          property="og:image"
+          content={`${siteUrl}${post.fields.slug}twitter-card.jpg`}
+        />
+
+        <meta
+          property="twitter:card"
           content="summary_large_image"
         />
         <meta
-          name="twitter:image"
+          property="twitter:url"
+          content="https://www.assim.me/"
+        />
+        <meta
+          property="twitter:title"
+          content={post.frontmatter.title}
+        />
+        <meta
+          property="twitter:description"
+          content={post.excerpt}
+        />
+        <meta
+          property="twitter:image"
           content={`${siteUrl}${post.fields.slug}twitter-card.jpg`}
         />
       </Helmet>
@@ -113,6 +149,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      excerpt
       fields {
         slug
       }
